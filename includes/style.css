@@ -1,0 +1,24 @@
+div.dtable{
+    display: table;
+    border-spacing: 5px;
+}
+div.drow{
+    display: table-row;
+}
+div.dcell, div.hcell{
+    display: table-cell;
+    padding: 3px;
+}
+div.hcell{
+    background-color: #CCCCCC;
+    font-weight: bold;
+}
+
+input[type="button"]{
+    width: 100px;
+}
+
+#adder input{
+    display: none;
+    vertical-align: top;
+}

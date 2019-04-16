@@ -5,10 +5,14 @@ $result = mysqli_query($mysqli, "SELECT * FROM users ORDER BY id"); // using mys
 ?>
 <html>
 <head>	
-	<title>Homepage</title>
-    <link rel="stylesheet" href="includes/style.css" type="text/css"/>
+	<title>Simple CRUD</title>
+
     <script type="text/javascript" src="includes/jQuery.js"></script>
-    <script type="text/javascript" defer src="includes/jqScripts.js"></script>
+    <script type="text/javascript" src="includes/ui/jquery-ui.js"></script>
+    <link rel="stylesheet" href="includes/ui/jquery-ui.css">
+
+    <script type="text/javascript" src="includes/jqScripts.js" defer></script>
+    <link rel="stylesheet" href="includes/style.css" type="text/css"/>
 </head>
 
 <body>
@@ -24,7 +28,8 @@ $result = mysqli_query($mysqli, "SELECT * FROM users ORDER BY id"); // using mys
             <div class="hcell">Age</div>
             <div class="hcell">Email</div>
             <div class="hcell">Update</div>
-        </div><!--row-->
+            <!--row-->
+        </div>
 
 
         <?php
@@ -34,9 +39,15 @@ $result = mysqli_query($mysqli, "SELECT * FROM users ORDER BY id"); // using mys
                 echo "<div class=\"dcell\" id='c2'>".$res['name']."</div>";
                 echo "<div class=\"dcell\" id='c3'>".$res['age']."</div>";
                 echo "<div class=\"dcell\" id='c4'>".$res['email']."</div>";
-                echo "<div class='dcell' id='c5'><input type='button' id='edit' value='Edit'> <input type='button' id='delete' value='Delete'></div>";
-            echo "</div><!--row-->";
+                echo "<div class='dcell' id='c5'><button id=\"edit\">Edit</button> <button id=\"delete\">Delete</button></div>";
+            echo "<!--row--></div>";
         }?>
+
+
+        <div class="drow" id="adder" align="center">
+            <!--row-->
+        </div>
+
 
 
         <div class="drow">
@@ -44,17 +55,18 @@ $result = mysqli_query($mysqli, "SELECT * FROM users ORDER BY id"); // using mys
             <div class="dcell"></div>
             <div class="dcell"></div>
             <div class="dcell"></div>
-            <div class="dcell"><input type="button" id="add" value="Add"></div>
-        </div><!--row-->
+            <div class="dcell"><button id="add">Add</button></div>
+            <!--row-->
+        </div>
 
 
-        <div class="drow" id="adder">
-            <? include "includes/rowForm.html" ?>
-        </div><!--row-->
+        <!--table-->
+	</div>
 
 
-	</div><!--table-->
 
-
+<div id="confirm" title="Confirm the deleting">
+    <p>Are you sure you want to delete this element?</p>
+</div>
 </body>
 </html>

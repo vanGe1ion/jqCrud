@@ -10,15 +10,17 @@ div.dcell, div.hcell{
     padding: 3px;
 }
 div.hcell{
-    background-color: #CCCCCC;
+    background-color: #0078ae;
     font-weight: bold;
-}
-
-input[type="button"]{
-    width: 100px;
+    color: white;
+    text-align: center;
 }
 
 #adder input{
     display: none;
-    vertical-align: top;
+    vertical-align: center;
+
+}
+#adder button{
+    display: none;
 }
